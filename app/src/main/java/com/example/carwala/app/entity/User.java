@@ -10,7 +10,6 @@ import java.util.Set;
 @NoArgsConstructor
 @AllArgsConstructor
 @Getter
-@Setter
 @Table(name="users")
 public class User {
 
@@ -38,4 +37,27 @@ public class User {
     @OneToMany(mappedBy = "user", cascade = CascadeType.ALL, orphanRemoval = true)
     private Set<Booking> bookings;
 
+    public void setId(Long id) {
+        this.id = id;
+    }
+
+    public void setUsername(String username) {
+        this.username = username;
+    }
+
+    public void setPassword(String password) {
+        this.password = password;
+    }
+
+    public void setEmail(String email) {
+        this.email = email;
+    }
+
+    public void setRole(String role) {
+        this.role = role;
+    }
+
+    public void setBookings(Set<Booking> bookings) {
+        this.bookings = bookings;
+    }
 }

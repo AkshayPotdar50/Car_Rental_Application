@@ -11,7 +11,6 @@ import java.util.Set;
 @AllArgsConstructor
 @NoArgsConstructor
 @Getter
-@Setter
 @Table(name="cars")
 public class Car{
 
@@ -40,4 +39,31 @@ public class Car{
     @OneToMany(mappedBy = "car",cascade = CascadeType.ALL, orphanRemoval = true)
     private Set<Booking> bookings;
 
+    public void setId(Long id) {
+        this.id = id;
+    }
+
+    public void setBrand(String brand) {
+        this.brand = brand;
+    }
+
+    public void setModel(String model) {
+        this.model = model;
+    }
+
+    public void setType(String type) {
+        this.type = type;
+    }
+
+    public void setPricePerDay(BigDecimal pricePerDay) {
+        this.pricePerDay = pricePerDay;
+    }
+
+    public void setAvailable(boolean available) {
+        this.available = available;
+    }
+
+    public void setBookings(Set<Booking> bookings) {
+        this.bookings = bookings;
+    }
 }
